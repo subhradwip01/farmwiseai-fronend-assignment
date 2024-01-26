@@ -1,5 +1,4 @@
 import React from "react";
-
 const ShowFieldInformation = ({ fields }) => {
   return (
     <div>
@@ -9,6 +8,7 @@ const ShowFieldInformation = ({ fields }) => {
           <tr>
             <th>No</th>
             <th>Field Name</th>
+            <th>Field Type</th>
             <th>Field Data Type</th>
             <th>Field Validation</th>
             <th>Field Data</th>
@@ -25,7 +25,7 @@ const ShowFieldInformation = ({ fields }) => {
               <td>
                 {field.fieldType === "textbox"
                   ? `Max length: ${field.maxLength}`
-                  : field.fieldType === "date"
+                  : field.fieldType === "datepicker"
                   ? `Between ${field.minDate} to ${field.maxDate}`
                   : "nill"}
               </td>
@@ -39,6 +39,9 @@ const ShowFieldInformation = ({ fields }) => {
                 ) : (
                   field.fieldData
                 )}{" "}
+              </td>
+              <td>
+                {field.isfieldMandatory}
               </td>
             </tr>
           ))}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ShowFieldInformation from "./ShowFieldInformation";
 import { useDispatch } from "react-redux";
-import { addField as addFieldToRedux } from "../redux/action";
+import { addField as addFieldToRedux } from "../redux/reducer";
 import FieldInformation from "./FieldInformation";
 const FormCreate = ({ selectedProfession }) => {
   const [fields, setfields] = useState([]);
@@ -25,7 +25,8 @@ const FormCreate = ({ selectedProfession }) => {
   const addfield = (field) => {
     const newfields = [...fields];
     field.no = newfields.length + 1;
-    field.feildType = selectedFieldType;
+    field.fieldType = selectedFieldType;
+    console.log(field);
     newfields.push(field);
     setfields(newfields);
     setIsAddFiledEnabled(false);

@@ -1,2 +1,0 @@
-export const ADD_FIELD = "ADD_FIELD";
-export const INITIALIZE_STATE = "INITIALIZE_STATE";

@@ -9,6 +9,7 @@ const DashBoard = () => {
     (state) => state.fieldReducer
   );
 
+  console.log(proffessionFeildInformation);
   return (
     <div>
       <select
@@ -23,7 +24,8 @@ const DashBoard = () => {
       {selectedValue &&
         (proffessionFeildInformation[selectedValue] ? (
           <DisplayForm
-            feildInformation={proffessionFeildInformation[selectedValue]}
+          fields={proffessionFeildInformation[selectedValue].fields}
+          selectedProfession={selectedValue}
           />
         ) : (
           <FormCreate selectedProfession={selectedValue} />

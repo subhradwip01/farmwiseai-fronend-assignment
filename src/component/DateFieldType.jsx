@@ -45,12 +45,24 @@ const DateFieldType = ({ addField }) => {
       </div>
       <div>
         <div>
-          <label id="minDate">Date range Validation</label>
-          <input type="date" id="minDate" name="minDate" />
+          <label id="minDate">Min Date</label>
+          <input
+            type="date"
+            id="minDate"
+            name="minDate"
+            value={fieldInformtion.minDate}
+            onChange={onInputChange}
+          />
         </div>
         <div>
-          <label id="maxDate">Date range Validation</label>
-          <input type="date" id="maxDate" name="maxDate" />
+          <label id="maxDate">Max date</label>
+          <input
+            type="date"
+            id="maxDate"
+            name="maxDate"
+            value={fieldInformtion.maxDate}
+            onChange={onInputChange}
+          />
         </div>
       </div>
       <div>

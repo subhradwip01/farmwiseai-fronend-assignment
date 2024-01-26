@@ -42,8 +42,6 @@ const TextboxFieldType = ({ addField }) => {
           <option value={null}>Select Field Data Type </option>
           <option value="number">Number</option>
           <option value="text">String</option>
-          <option value="email">Email</option>
-          <option value="password">Password</option>
         </select>
       </div>
       <div>

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './App.css';
 import DashBoard from './pages/DashBoard';
 import { useDispatch } from 'react-redux';
-import { initalizeState } from './redux/action';
+import { initializeState } from './redux/reducer';
 
 function App() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ function App() {
     const allProfessionalFeildInformation = localStorage.getItem('allProfessionalFeildInformation');
     if(allProfessionalFeildInformation){
       const allProfessionalFeildInformationObj = JSON.parse(allProfessionalFeildInformation);
-      dispatch(initalizeState(allProfessionalFeildInformationObj));
+      dispatch(initializeState(allProfessionalFeildInformationObj));
     }
   },[])
   return (
