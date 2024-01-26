@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import DashBoard from './pages/DashBoard';
+import { useDispatch } from 'react-redux';
+import { initalizeState } from './redux/action';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    const allProfessionalFeildInformation = localStorage.getItem('allProfessionalFeildInformation');
+    if(allProfessionalFeildInformation){
+      const allProfessionalFeildInformationObj = JSON.parse(allProfessionalFeildInformation);
+      dispatch(initalizeState(allProfessionalFeildInformationObj));
+    }
+  },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DashBoard/>
     </div>
   );
 }
